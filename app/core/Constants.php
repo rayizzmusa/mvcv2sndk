@@ -1,3 +1,3 @@
 <?php
 
-define('BASEURL', 'http://mvcv2sndk.test/public');
+// define('BASEURL', 'http://mvcv2sndk.test/public');
