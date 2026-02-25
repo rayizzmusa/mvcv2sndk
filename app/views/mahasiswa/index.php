@@ -10,7 +10,7 @@
         <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>
 
-            <button type="button" class="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary mt-3 mb-3 modal-tambah" data-bs-toggle="modal" data-bs-target="#formModal">
                 Tambah Data
             </button>
 
@@ -19,6 +19,7 @@
                     <li class="list-group-item">
                         <?= $mahasiswa['nama'] ?>
                         <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mahasiswa['id']; ?>" class="badge bg-danger float-end ms-2" onclick="return confirm('Apakah yakin menghapus data ini?');">hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mahasiswa['id']; ?>" class="badge bg-info float-end ms-2 modal-ubah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mahasiswa['id']; ?>">ubah</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mahasiswa['id']; ?>" class="badge bg-primary float-end ms-2">detail</a>
                     </li>
                 <?php endforeach ?>
@@ -37,6 +38,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
                     </div>
@@ -47,7 +49,7 @@
                         <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                     </div>
                     <div class="mb-3">
-                        <select class="form-select" size="3" aria-label="size 3 select example" name="jurusan">
+                        <select class="form-select" size="3" aria-label="size 3 select example" id="jurusan" name="jurusan">
                             <option selected>Jurusan</option>
                             <option value="IT">IT</option>
                             <option value="B. Arab">B. Arab</option>
