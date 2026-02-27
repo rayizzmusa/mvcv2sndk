@@ -60,4 +60,14 @@ class Mahasiswa extends Controller
             Flasher::setFlash('gagal', 'diubah', 'danger');
         }
     }
+
+    public function cari()
+    {
+        $data['judul'] = "Daftar Mahasiswa";
+        $data['mhs'] = $this->model("Mahasiswa_model")->cariDataMhs();
+
+        $this->view('templates/header', $data);
+        $this->view('mahasiswa/index', $data);
+        $this->view('templates/footer');
+    }
 }

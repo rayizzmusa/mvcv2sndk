@@ -102,4 +102,15 @@ class Mahasiswa_model
 
         return $this->db->rowCount();
     }
+
+    public function cariDataMhs()
+    {
+        $keyword = $_POST['nama'];
+        $query = "select * from mahasiswa where nama like :keyword";
+
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+
+        return $this->db->resultSet();
+    }
 }

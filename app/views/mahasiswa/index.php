@@ -5,15 +5,30 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-primary mt-3 mb-3 modal-tambah" data-bs-toggle="modal" data-bs-target="#formModal">
+                Tambah Data
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari nama mahasiswa" name="nama" id="nama" autocomplete="off">
+                    <button class="btn btn-primary" type="submit" id="button-cari">Cari</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <div class="row">
         <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>
-
-            <button type="button" class="btn btn-primary mt-3 mb-3 modal-tambah" data-bs-toggle="modal" data-bs-target="#formModal">
-                Tambah Data
-            </button>
-
+            <br>
             <ul class="list-group">
                 <?php foreach ($data['mhs'] as $mahasiswa) : ?>
                     <li class="list-group-item">
