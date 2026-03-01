@@ -1,0 +1,11 @@
+.add-card {
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    transition: 0.3s;
+}
+
+.add-card:hover {
+    background-color: #f8f9fa;
+    border-color: #0d6efd;
+    transform: scale(1.03);
+}
